@@ -2,15 +2,15 @@
 <html lang="es">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>CiberPadlock | Seguridad y Soporte Técnico</title>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet" />
   <style>
     body {
-      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-      font-size: 1.1rem;
-      margin: 0;
+      font-family: 'Poppins', sans-serif;
       background-color: #121212;
       color: #f0f0f0;
+      margin: 0;
     }
     header {
       background-color: #1f1f1f;
@@ -29,7 +29,7 @@
     nav {
       background-color: #00BFFF;
       text-align: center;
-      padding: 1em 0;
+      padding: 1em;
     }
     .dropdown {
       display: inline-block;
@@ -59,7 +59,6 @@
       padding: 0.5em;
       color: #f0f0f0;
       text-decoration: none;
-      font-size: 1rem;
     }
     .dropdown-content a:hover {
       background-color: #00BFFF;
@@ -68,7 +67,7 @@
     .dropdown:hover .dropdown-content {
       display: block;
     }
-    section {
+    .content {
       display: none;
       padding: 2em;
       max-width: 900px;
@@ -76,19 +75,9 @@
       background-color: #1f1f1f;
       border-radius: 8px;
       margin-top: 2em;
-      font-size: 1.1rem;
     }
     .active {
       display: block;
-    }
-    footer {
-      background-color: #1f1f1f;
-      color: #f0f0f0;
-      text-align: center;
-      padding: 1em;
-      margin-top: 2em;
-      border-top: 1px solid #333;
-      font-size: 1rem;
     }
     .mascota-container {
       display: flex;
@@ -112,7 +101,6 @@
       max-width: 300px;
       font-style: italic;
       border: 1px solid #444;
-      font-size: 1rem;
     }
     input, textarea, button {
       width: 100%;
@@ -127,7 +115,14 @@
       color: #000;
       font-weight: bold;
       cursor: pointer;
-      font-size: 1rem;
+    }
+    footer {
+      background-color: #1f1f1f;
+      color: #f0f0f0;
+      text-align: center;
+      padding: 1em;
+      margin-top: 2em;
+      border-top: 1px solid #333;
     }
   </style>
 </head>
@@ -136,11 +131,12 @@
     <h1>CiberPadlock</h1>
     <img src="IMG-20240312-WA0067.jpg" alt="Logo CiberPadlock">
   </header>
+
   <nav>
     <div class="dropdown">
       <button>Inicio</button>
       <div class="dropdown-content">
-        <a href="#" onclick="mostrarSeccion('inicio')">Bienvenida</a>
+        <a href="#" onclick="mostrarSeccion('inicio')">Inicio</a>
       </div>
     </div>
     <div class="dropdown">
@@ -153,16 +149,18 @@
       </div>
     </div>
     <div class="dropdown">
-      <button>Servicios</button>
+      <button>Operacional</button>
       <div class="dropdown-content">
         <a href="#" onclick="mostrarSeccion('servicios')">Servicios</a>
-        <a href="#" onclick="mostrarSeccion('suscripciones')">Suscripciones</a>
+        <a href="#" onclick="mostrarSeccion('Ventajas')">Ventajas</a>
       </div>
     </div>
     <div class="dropdown">
       <button>Organización</button>
       <div class="dropdown-content">
-        <a href="#" onclick="mostrarSeccion('info')">Info empresarial</a>
+        <a href="#" onclick="mostrarSeccion('info')">Organigrama</a>
+        <a href="#" onclick="mostrarSeccion('sostenibilidad')">Sostenibilidad</a>
+        <a href="#" onclick="mostrarSeccion('responsabilidad')">Responsabilidad Social</a>
       </div>
     </div>
     <div class="dropdown">
@@ -172,23 +170,24 @@
       </div>
     </div>
   </nav>
-  
-  <section id="inicio" class="active">
+
+  <section id="inicio" class="content active">
     <p>Somos jóvenes empresarios apasionados por la seguridad digital los cuales conformamos CiberPadlock, un grupo dispuesto a colaborar con nuestros conocimientos a la comunidad local.</p>
+        <img src="Folleto.png" alt="Logo CiberPadlock">
     <div class="mascota-container">
       <img src="Mascota.png" alt="Mascota Paolo" class="mascota-interactiva" onclick="hablarPaolo()">
       <div id="mensajePaolo" class="mensaje-paolo">¡Haz clic en Paolo!</div>
     </div>
   </section>
-  <section id="mision">
+  <section id="mision" class="content">
     <h2>Misión</h2>
     <p>Proteger la información confidencial de organizaciones y particulares con tecnologías de ciberseguridad avanzadas.</p>
   </section>
-  <section id="vision">
+  <section id="vision" class="content">
     <h2>Visión</h2>
     <p>En tres años ser reconocidos por nuestras herramientas innovadoras que faciliten la comprensión de la ciberseguridad.</p>
   </section>
-  <section id="objetivos">
+  <section id="objetivos" class="content">
     <h2>Objetivo Principal</h2>
     <p>Desarrollar una app educativa de ciberseguridad para estudiantes y educadores.</p>
     <h3>Específicos</h3>
@@ -198,11 +197,11 @@
       <li>Capacitación en buenas prácticas.</li>
     </ul>
   </section>
-  <section id="justificacion">
+  <section id="justificacion" class="content">
     <h2>Justificación</h2>
     <p>Se basa en la importancia de proteger la información en un entorno digital expuesto a ciberataques.</p>
   </section>
-  <section id="servicios">
+  <section id="servicios" class="content">
     <h2>Servicios</h2>
     <ul>
       <li>Ciberseguridad personalizada</li>
@@ -210,22 +209,33 @@
       <li>Paquetes y precios ajustados</li>
     </ul>
   </section>
-  <section id="suscripciones">
-    <h2>Suscripciones</h2>
+  <section id="Ventajas" class="content">
+    <h2>Ventajas</h2>
     <p>Planes premium ajustados a tus necesidades.</p>
   </section>
-  <section id="info">
+  <section id="info" class="content">
     <h2>Organigrama Empresarial</h2>
+    <p>Aqui tenemos nuestra division en la empresa </p>
+    <img src="Organigrama.png" alt="Logo CiberPadlock">
+  </section>
+  <section id="sostenibilidad" class="content">
     <h2>Sostenibilidad</h2>
     <p>Uso de paneles solares para un entorno ecoamigable.</p>
-    <h2>Responsabilidad Social</h2>
-    <p>Comprometidos con el bienestar digital de nuestra comunidad.</p>
   </section>
-  <section id="contacto">
+  <section id="responsabilidad" class="content">
+    <h2>Responsabilidad Social</h2>
+En CiberPadlock, creemos que la tecnología debe estar al servicio de la sociedad y del planeta. Por eso, asumimos nuestro compromiso con la comunidad y el medio ambiente a través de dos pilares fundamentales:
+<h3>Educación para la ciberseguridad:</h3>
+De manera voluntaria y gratuita, ofrecemos clases y charlas sobre prevención de daños en ciberseguridad. Estas actividades buscan empoderar a personas y organizaciones, especialmente a quienes no tienen acceso a formación especializada, con herramientas básicas para proteger su información y navegar de forma segura en el entorno digital.
+<h3>Compromiso ambiental:</h3>
+Trabajamos activamente por reducir nuestra huella ecológica. Gracias a la implementación de paneles solares, gran parte de nuestra energía proviene de fuentes renovables, lo que disminuye el impacto ambiental de nuestras operaciones y refleja nuestro compromiso con un futuro sostenible.
+</p>
+  </section>
+  <section id="contacto" class="content">
     <h2>Contáctanos</h2>
     <form action="https://formspree.io/f/xvganyab" method="POST">
-      <input type="text" name="nombre" placeholder="Nombre" required>
-      <input type="email" name="email" placeholder="Correo electrónico" required>
+      <input type="text" name="nombre" placeholder="Nombre" required />
+      <input type="email" name="email" placeholder="Correo electrónico" required />
       <textarea name="mensaje" placeholder="Tu mensaje..." rows="4" required></textarea>
       <button type="submit">Enviar</button>
     </form>
@@ -246,7 +256,7 @@
     ];
 
     function mostrarSeccion(id) {
-      document.querySelectorAll('section').forEach(s => s.classList.remove('active'));
+      document.querySelectorAll('.content').forEach(s => s.classList.remove('active'));
       document.getElementById(id).classList.add('active');
     }
 
