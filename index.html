@@ -19,6 +19,48 @@
       padding: 1em;
       position: relative;
     }
+    .planes-container {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 20px;
+}
+
+.plan-card {
+  background: #ffffff;
+  border: 1px solid #ddd;
+  border-radius: 12px;
+  padding: 20px;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+  transition: transform 0.2s ease-in-out;
+}
+
+.plan-card:hover {
+  transform: scale(1.02);
+}
+
+.plan-card h3 {
+  color: #0056b3;
+  margin-bottom: 10px;
+}
+
+.precio {
+  font-weight: bold;
+  color: #27ae60;
+  margin-bottom: 10px;
+}
+
+.plan-card p {
+  font-size: 14px;
+  line-height: 1.5;
+  color: #333;
+}
+
+/* Responsive para pantallas pequeñas */
+@media (max-width: 768px) {
+  .planes-container {
+    grid-template-columns: 1fr;
+  }
+}
     header img {
       position: absolute;
       right: 1em;
@@ -172,64 +214,158 @@
   </nav>
 
   <section id="inicio" class="content active">
-    <p>Somos jóvenes empresarios apasionados por la seguridad digital los cuales conformamos CiberPadlock, un grupo dispuesto a colaborar con nuestros conocimientos a la comunidad local.</p>
-        <img src="Folleto.PNG" alt="Folleto informativo de CiberPadlock">
-
-    <div class="mascota-container">
+    <h2>Conoce a la Empresa</h2>
+    <p>CiberPadlock es una empresa dedicada a brindar soluciones integrales de ciberseguridad. Ofrecemos servicios como revisión de sistemas, detección de fallas, pruebas preventivas contra ataques, asesorías en normas de seguridad digital y capacitación en buenas prácticas tecnológicas. Nuestro enfoque se basa en el uso de inteligencia artificial y automatización, herramientas que nos permiten detectar y responder a incidentes en tiempo real de manera eficiente y confiable.</p>
+    <h2>¡Quienes Somos</h2>
+    <p>En CiberPadlock trabajamos bajo tres pilares fundamentales:</p>
+    <ul>
+      <li>Uso de tecnología actual para garantizar soluciones modernas y efectivas.</li>
+      <li>Cumplimiento de normas de seguridad que respalden la confianza de nuestros clientes.</li>
+      <li>Capacitación constante de nuestro equipo, lo que nos permite estar siempre preparados frente a los nuevos desafíos digitales. </li>
+    </ul>
+    <p>Nuestro propósito es contribuir a un entorno digital más seguro, trabajando de la mano con instituciones educativas, empresas y entidades públicas para fortalecer la cultura de la ciberseguridad en la sociedad.</p>
+        <img src="Folleto.png" alt="Logo CiberPadlock" 
+        style="width:80%; margin-top:1em; display: block; margin-left: auto; margin-right: auto;"/>
+      <h2>Cómo se Creó la Empresa</h2>
+      <p>CiberPadlock nació como respuesta a una necesidad evidente en la comunidad: la falta de protección frente a las crecientes amenazas digitales. Con el avance acelerado de la tecnología, cada vez más personas y empresas empezaron a manejar información sensible —desde datos personales hasta documentos financieros— sin contar con los recursos adecuados para protegerse. Esto dejó a muchos expuestos a situaciones graves como el robo de identidad, fraudes económicos, pérdida de información y ataques cibernéticos que podían poner en riesgo su estabilidad y confianza.</p>
+      <p>Frente a este panorama, un grupo de jóvenes apasionados por la informática y comprometidos con el bienestar de la comunidad decidió unir esfuerzos y conocimientos para crear un proyecto que tuviera un impacto real. Así nació CiberPadlock, con la idea de ofrecer servicios accesibles que no solo se enfocaran en la protección digital, sino también en la prevención y la educación en seguridad tecnológica.</p>
+      <p>Desde sus inicios, la empresa se propuso trabajar en dos frentes principales: por un lado, brindar soluciones técnicas a empresas y usuarios que necesitaran asegurar sus sistemas; y por otro, acercar el conocimiento a la comunidad a través de capacitaciones y asesorías que ayudaran a comprender los riesgos digitales y a desarrollar hábitos seguros en el uso de la tecnología.</p>
+      <p>CiberPadlock se creó con la convicción de que la seguridad digital no debe ser exclusiva de grandes corporaciones, sino un derecho al que toda persona pueda acceder. Con esfuerzo y dedicación, la empresa fue consolidando su trabajo, construyendo relaciones de confianza con clientes y colaborando con instituciones educativas y organizaciones locales para llevar la ciberseguridad a más espacios.</p>
+      <p>Hoy en día, CiberPadlock representa un compromiso firme con la protección de la información y la formación digital. Más que un servicio técnico, somos un aliado que acompaña a las personas y a las empresas en su proceso de transformación tecnológica, asegurando que puedan aprovechar los beneficios de la era digital sin estar expuestos a los riesgos que esta conlleva.</p>
+      <h2>El Problema que Resolvemos</h2>
+      <p>Actualmente, muchas empresas y personas manejan información sensible sin contar con medidas adecuadas de protección, lo que las expone a riesgos como robos de datos, virus o ataques cibernéticos. Además, no siempre cuentan con personal capacitado o con el conocimiento suficiente para prevenir o responder a estas amenazas.</p>
+      <p>CiberPadlock surge para resolver este problema, ofreciendo soluciones de protección digital, asesoría técnica y capacitación, contribuyendo así a crear un entorno digital más confiable y seguro para todos</p>
+      <div class="mascota-container">
       <img src="Mascota.png" alt="Mascota Paolo" class="mascota-interactiva" onclick="hablarPaolo()">
       <div id="mensajePaolo" class="mensaje-paolo">¡Haz clic en Paolo!</div>
     </div>
   </section>
   <section id="mision" class="content">
     <h2>Misión</h2>
-    <p>Proteger la información confidencial de organizaciones y particulares con tecnologías de ciberseguridad avanzadas.</p>
+    <p>Proteger la información confidencial de organizaciones y particulares, ofreciendo tecnologías de ciberseguridad avanzadas, fáciles de implementar y diseñadas para anticipar y neutralizar amenazas emergentes.</p>
+<h3>¿Por qué esta misión?</h3>
+<p>Porque vivimos en una era en la que los datos se han convertido en uno de los activos más valiosos, y al mismo tiempo, en los más vulnerables. Nuestra misión responde a la necesidad urgente de contar con soluciones que no solo reaccionen a los ataques, sino que los prevengan. Nos enfocamos en la protección accesible y práctica, de manera que cualquier usuario —sin importar su nivel técnico— pueda proteger su información de manera efectiva.</p>
   </section>
   <section id="vision" class="content">
     <h2>Visión</h2>
-    <p>En tres años ser reconocidos por nuestras herramientas innovadoras que faciliten la comprensión de la ciberseguridad.</p>
+    <p>En una proyección de tres años, buscamos ser reconocidos a nivel municipal como una empresa referente en estrategias y herramientas innovadoras que faciliten la comprensión de la ciberseguridad en el día a día de cada usuario.</p>
+  <h3>¿Por qué esta visión?</h3>
+<p> Porque entendemos que la ciberseguridad no debe verse como algo lejano, complejo o exclusivo de las grandes empresas, sino como una práctica cotidiana que cualquier persona puede incorporar. Aspiramos a que nuestra labor se traduzca en un cambio cultural: que estudiantes, trabajadores, empresas y familias asocien a CiberPadlock con confianza, innovación y educación en seguridad digital.</p>
   </section>
   <section id="objetivos" class="content">
     <h2>Objetivo Principal</h2>
-    <p>Desarrollar una app educativa de ciberseguridad para estudiantes y educadores.</p>
-    <h3>Específicos</h3>
+    <p>DDesarrollar y lanzar una aplicación móvil de ciberseguridad educativa, innovadora y de calidad que proporcione a los usuarios, especialmente a estudiantes, educadores y a la comunidad local, las herramientas y los datos necesarios para comprender, prevenir y responder eficazmente a las amenazas cibernéticas, promoviendo así un entorno digital seguro y protegido.</p>
+
+<h3>¿Por qué este objetivo?</h3>
+<p> Porque la educación es la base de la prevención. Una aplicación móvil permite que el conocimiento y las herramientas lleguen de manera directa, rápida y sencilla a los usuarios, integrándose en su vida diaria. De esta forma, no solo ofrecemos servicios, sino que empoderamos a la comunidad para que cada persona sea capaz de protegerse a sí misma.</p>
+    <h2>Objetivos Específicos</h2>
     <ul>
-      <li>Ofrecer servicios personalizados con asesorías y pruebas.</li>
-      <li>Implementar IA y herramientas automatizadas.</li>
-      <li>Capacitación en buenas prácticas.</li>
+      <li>Ofrecer servicios de ciberseguridad personalizados que permitan a empresas y usuarios proteger su información digital mediante diagnósticos, pruebas de seguridad y asesorías técnicas.</li>
+      <li>Implementar tecnologías modernas como inteligencia artificial y herramientas automatizadas para mejorar la detección y prevención de amenazas informáticas en tiempo real.</li>
+      <li>Brindar programas de formación y capacitación en buenas prácticas de seguridad digital, dirigidos tanto a clientes como al equipo interno, para fortalecer la cultura de ciberseguridad en distintos sectores.</li>
     </ul>
   </section>
   <section id="justificacion" class="content">
     <h2>Justificación</h2>
-    <p>Se basa en la importancia de proteger la información en un entorno digital expuesto a ciberataques.</p>
+    <p>La creación y fortalecimiento de CiberPadlock se justifica en la creciente importancia de proteger la información en línea dentro de un entorno digital cada vez más expuesto a ciberataques. Garantizar la privacidad y seguridad de los usuarios es fundamental en la era actual, donde más del 30% de la población interactúa de manera frecuente con las redes.</p>
+<p>
+El objetivo de nuestra empresa es proporcionar a cada usuario la confianza y certeza necesarias para navegar en internet, usar aplicaciones y aprovechar la tecnología sin temor a ser víctimas de amenazas cibernéticas. La seguridad digital ya no es un lujo, sino una necesidad básica; por eso CiberPadlock se posiciona como un aliado estratégico que protege, asesora y educa, facilitando el manejo responsable de las tecnologías.</p>
   </section>
   <section id="servicios" class="content">
     <h2>Servicios</h2>
+    <p>CiberPadlock ofrece soluciones integrales de ciberseguridad diseñadas para proteger la información de empresas, instituciones educativas y usuarios particulares de manera accesible y confiable. Nuestros servicios combinan tecnología avanzada, prevención y capacitación, adaptándose a las necesidades específicas de cada cliente.</p>
+    <h3>Servicios Principales</h3>
     <ul>
-      <li>Ciberseguridad personalizada</li>
-      <li>Formación y capacitación</li>
-      <li>Paquetes y precios ajustados</li>
+      <li>Monitoreo de redes y sistemas 24/7: supervisión continua para detectar amenazas en tiempo real.</li>
+      <li>Respuesta inmediata ante incidentes: atención rápida y efectiva frente a ataques cibernéticos o fallas de seguridad.</li>
+      <li>PAuditorías y diagnósticos de seguridad: revisión completa de sistemas y análisis de vulnerabilidades.</li>
+      <li>Implementación de firewalls y sistemas de detección de intrusos (IDS/IPS): protección activa contra accesos no autorizados y malware</li>
     </ul>
+    <h3>Costos</h3>
+    <p>Servicios principales: desde $150.000 COP/mes para usuarios particulares 
+desde $600.000 COP/mes para instituciones o empresas pequeñas.</p>
+<h3>Paquetes </h3>
+<p>CiberPadlock ofrece cuatro paquetes principales, adaptables según las necesidades del cliente y con promociones que garantizan flexibilidad y eficiencia:</p>
+<div class="planes-container">
+
+    <div class="plan-card">
+      <h3>Plan Análisis de ISO</h3>
+      <p class="precio">$500.000 COP</p>
+      <p>Incluye transmisión de datos binarios, organización de datos en marcos, protocolos de enrutamiento, comunicación entre aplicaciones, representación de datos, codificación y cifrado. Diseñado para empresas y usuarios que desean asegurar la integridad de su información y cumplir con estándares de seguridad internacionales.</p>
+    </div>
+
+    <div class="plan-card">
+      <h3>Plan Gestión de Vulnerabilidades</h3>
+      <p class="precio">$600.000 COP</p>
+      <p>Permite identificar activos críticos, planificar análisis de vulnerabilidades, clasificar riesgos, aplicar medidas de remediación y validar resultados. Ideal para organizaciones que buscan reducir riesgos y fortalecer la seguridad de sus sistemas ante amenazas constantes.</p>
+    </div>
+
+    <div class="plan-card">
+      <h3>Plan IDS/IPS</h3>
+      <p class="precio">$550.000 COP</p>
+      <p>Implementa mecanismos para identificar tráfico malicioso dentro de la red, configurando firewalls y sistemas de detección de intrusos. Pensado para clientes que necesitan protección proactiva y monitoreo constante de su infraestructura digital.</p>
+    </div>
+
+    <div class="plan-card">
+      <h3>Plan Phishing Test</h3>
+      <p class="precio">$450.000 COP</p>
+      <p>Incluye recepción y registro de incidentes, análisis técnico, clasificación de amenazas, prevención, concienciación, documentación y cierre de casos. Perfecto para empresas e instituciones que desean educar a su personal y prevenir ataques de ingeniería social.</p>
+    </div>
+
+  </div>
   </section>
   <section id="Ventajas" class="content">
     <h2>Ventajas</h2>
-    <p>Planes premium ajustados a tus necesidades.</p>
+    <p>Nuestros servicios ofrecen ventajas competitivas claras:</p>
+    <ul>
+      <li>Tecnología avanzada: uso de inteligencia artificial y automatización para detectar amenazas en tiempo real.</li>
+      <li>Personalización: paquetes y planes adaptados a cada tipo de usuario o institución, ajustando costos y servicios según sus necesidades.</li>
+      <li>Capacitación continua: formación constante para clientes y equipo interno, fortaleciendo la cultura de ciberseguridad.</li>
+      <li>Disponibilidad 24/7: monitoreo y soporte ininterrumpido para garantizar protección constante.</li>
+      <li>Prevención y respuesta rápida: combinación de auditorías, pruebas y sistemas inteligentes que minimizan riesgos y reducen impactos de incidentes.</li>
+      <li>Accesibilidad económica: servicios diseñados para que tanto particulares como instituciones locales puedan acceder a seguridad digital de calidad.</li>
+      <li>Compromiso con la comunidad: colaboración con instituciones educativas y organizaciones locales para fortalecer la educación y cultura digital segura.</li>
+   </ul>
   </section>
   <section id="info" class="content">
     <h2>Organigrama Empresarial</h2>
     <p>Aqui tenemos nuestra division en la empresa </p>
-<img src="Organigrama.PNG" alt="Organigrama empresarial de CiberPadlock">
+    <img src="Organigrama.png" alt="Logo CiberPadlock"
+    style="width:60%; margin-top:1em; display: block; margin-left: auto; margin-right: auto;"/>
+  </section>
   <section id="sostenibilidad" class="content">
     <h2>Sostenibilidad</h2>
-    <p>Uso de paneles solares para un entorno ecoamigable.</p>
+    <p>En el marco de nuestro compromiso con el medio ambiente, en CiberPadlock adoptamos prácticas que reducen nuestro impacto ambiental y promueven un modelo empresarial responsable:
+    </p>
+    <h3>1 Energia limpia</h3>
+    <p>Nuestro centro de operaciones funciona con paneles solares, lo que disminuye el consumo de energía tradicional y la emisión de CO₂.<br>
+    Incentivamos el uso de energías renovables en el sector tecnológico local.</p>
+    <h3>2 Consumo responsable</h3>
+    <p>Reducción del uso de papel mediante la digitalización de procesos internos y externos.<br>
+       Promoción del teletrabajo y soporte remoto para minimizar traslados y emisiones de transporte.</p>
+    <h3>3 Economía circular</h3>
+    <p>Gestión adecuada de residuos tecnológicos y electrónicos.<br>
+       Reutilización y reciclaje de equipos en desuso para proyectos educativos o comunitarios.</p>
   </section>
   <section id="responsabilidad" class="content">
     <h2>Responsabilidad Social</h2>
-En CiberPadlock, creemos que la tecnología debe estar al servicio de la sociedad y del planeta. Por eso, asumimos nuestro compromiso con la comunidad y el medio ambiente a través de dos pilares fundamentales:
-<h3>Educación para la ciberseguridad:</h3>
-De manera voluntaria y gratuita, ofrecemos clases y charlas sobre prevención de daños en ciberseguridad. Estas actividades buscan empoderar a personas y organizaciones, especialmente a quienes no tienen acceso a formación especializada, con herramientas básicas para proteger su información y navegar de forma segura en el entorno digital.
-<h3>Compromiso ambiental:</h3>
-Trabajamos activamente por reducir nuestra huella ecológica. Gracias a la implementación de paneles solares, gran parte de nuestra energía proviene de fuentes renovables, lo que disminuye el impacto ambiental de nuestras operaciones y refleja nuestro compromiso con un futuro sostenible.
-</p>
+<p>En CiberPadlock estamos convencidos de que la ciberseguridad y la responsabilidad social deben caminar de la mano. Nuestro compromiso no se limita a proteger datos e información, sino también a aportar al bienestar de la comunidad y al cuidado del planeta.</p>
+<h3>1 Educación digital para todos</h3>
+<p>Realizamos talleres gratuitos en colegios, universidades y comunidades locales para enseñar prácticas seguras en internet.<br>
+   Fomentamos la cultura de prevención frente a riesgos como el ciberacoso, el robo de datos o los fraudes digitales.</p>
+<h3>2 Acceso inclusivo a la ciberseguridad </h3>
+<p>Brindamos soluciones accesibles a pequeños emprendimientos y usuarios particulares, con paquetes económicos y flexibles. <br>
+   Ofrecemos programas de apoyo para estudiantes y sectores vulnerables, garantizando que la seguridad digital esté al alcance de todos.</p>
+   <h3>3 Compromiso del medio ambiente</h3>
+<p>Operamos con paneles solares que reducen considerablemente nuestra huella de carbono, demostrando que la tecnología puede ser sostenible.<br>
+  Impulsamos la adopción de energías limpias en el sector tecnológico local, sirviendo como ejemplo de innovación responsable.<br>
+  Reducimos el consumo de papel y priorizamos procesos digitales para minimizar el impacto ambiental.</p>
+   <h3>4 Apoyo a la comunidad local</h3>
+<p>Contratamos talento humano de la región, aportando al desarrollo económico y profesional de Cajicá y alrededores.<br>
+   Colaboramos con instituciones educativas para impulsar proyectos de innovación y cultura digital.</p>
+   <h3>5 Ética y transparencia</h3>
+<p>Garantizamos prácticas seguras y éticas en la gestión de datos, siempre respetando la privacidad de nuestros clientes.<br>
+   Mantenemos políticas claras y transparentes sobre el uso de la información.</p>
   </section>
   <section id="contacto" class="content">
     <h2>Contáctanos</h2>
