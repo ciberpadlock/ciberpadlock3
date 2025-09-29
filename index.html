@@ -8,9 +8,10 @@
   <style>
     body {
       font-family: 'Poppins', sans-serif;
-      background-color: #121212;
-      color: #f0f0f0;
-      margin: 0;
+  background-color: #121212;
+  color: #f0f0f0;
+  margin: 0;
+  text-align: center;
     }
     header {
       background-color: #1f1f1f;
@@ -19,12 +20,138 @@
       padding: 1em;
       position: relative;
     }
+    .submenu-bitacoras {
+  margin: 1em 0;
+}
+.slideshow {
+  position: relative;
+  width: 90%;
+  max-width: 800px;
+  height: 450px;
+  margin: 2em auto;
+  overflow: hidden;
+  border-radius: 12px;
+  box-shadow: 0 6px 15px rgba(0,0,0,0.6);
+}
+
+.slideshow img {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  opacity: 0;
+  transform: scale(1.2) rotate(5deg);
+  transition: opacity 1.5s ease, transform 2s ease;
+}
+
+.slideshow img.active {
+  opacity: 1;
+  transform: scale(1) rotate(0deg);
+  z-index: 1;
+}
+
+.controls {
+  position: absolute;
+  bottom: 15px;
+  left: 50%;
+  transform: translateX(-50%);
+  display: flex;
+  gap: 8px;
+}
+
+.controls button {
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+  border: none;
+  background: #fff;
+  opacity: 0.6;
+  cursor: pointer;
+  transition: opacity 0.3s;
+}
+.submenu-bitacoras button {
+  background-color: #00BFFF;
+  color: #000;
+  font-weight: bold;
+  border: none;
+  padding: 0.5em 1em;
+  margin: 0 5px;
+  cursor: pointer;
+  border-radius: 6px;
+  transition: transform 0.2s ease;
+}
+
+.submenu-bitacoras button:hover {
+  transform: scale(1.05);
+}
+
+.bitacora {
+  display: none;
+  margin-top: 1em;
+  padding: 1em;
+  background-color: #2c2c2c;
+  border-radius: 8px;
+}
+
+.bitacora.active {
+  display: block;
+}
     .planes-container {
   display: grid;
   grid-template-columns: repeat(2, 1fr);
   gap: 20px;
 }
+.slideshow {
+  position: relative;
+  width: 90%;
+  max-width: 700px;   /* más pequeño = más liviano */
+  height: 380px;
+  margin: 2em auto;
+  overflow: hidden;
+  border-radius: 12px;
+  box-shadow: 0 6px 15px rgba(0,0,0,0.6);
+}
 
+.slideshow img {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  opacity: 0;
+  transform: scale(1.05);
+  transition: opacity 0.8s ease, transform 1s ease;
+}
+
+.slideshow img.active {
+  opacity: 1;
+  transform: scale(1);
+  z-index: 1;
+}
+
+.controls {
+  position: absolute;
+  bottom: 10px;
+  left: 50%;
+  transform: translateX(-50%);
+  display: flex;
+  gap: 6px;
+}
+
+.controls button {
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  border: none;
+  background: #fff;
+  opacity: 0.6;
+  cursor: pointer;
+  transition: opacity 0.3s;
+}
+
+.controls button.active {
+  opacity: 1;
+  background: #00BFFF;
+}
 .plan-card {
   background: #ffffff;
   border: 1px solid #ddd;
@@ -61,6 +188,7 @@
     grid-template-columns: 1fr;
   }
 }
+
     header img {
       position: absolute;
       right: 1em;
@@ -118,6 +246,16 @@
       border-radius: 8px;
       margin-top: 2em;
     }
+    .content ul {
+  display: inline-block;
+  text-align: left;
+  margin: 1em auto;
+  padding-left: 1.5em;
+}
+
+.content li {
+  margin-bottom: 0.5em;
+}
     .active {
       display: block;
     }
@@ -171,7 +309,7 @@
 <body>
   <header>
     <h1>CiberPadlock</h1>
-    <img src="IMG-20240312-WA0067.jpg" alt="Logo CiberPadlock">
+    <img src="img/Logo.png" alt="Logo CiberPadlock" style="width:9%;"/>
   </header>
 
   <nav>
@@ -195,6 +333,7 @@
       <div class="dropdown-content">
         <a href="#" onclick="mostrarSeccion('servicios')">Servicios</a>
         <a href="#" onclick="mostrarSeccion('Ventajas')">Ventajas</a>
+        <a href="#" onclick="mostrarSeccion('Bitacoras')">Bitacoras</a>
       </div>
     </div>
     <div class="dropdown">
@@ -224,8 +363,7 @@
       <li>Capacitación constante de nuestro equipo, lo que nos permite estar siempre preparados frente a los nuevos desafíos digitales. </li>
     </ul>
     <p>Nuestro propósito es contribuir a un entorno digital más seguro, trabajando de la mano con instituciones educativas, empresas y entidades públicas para fortalecer la cultura de la ciberseguridad en la sociedad.</p>
-        <img src="Folleto.PNG" alt="Folleto" 
-        style="width:80%; margin-top:1em; display: block; margin-left: auto; margin-right: auto;"/>
+        <img src="img/Folleto.png" alt="Folleto" style="width:80%; margin-top:1em; display: block; margin-left: auto; margin-right: auto;"/>
       <h2>Cómo se Creó la Empresa</h2>
       <p>CiberPadlock nació como respuesta a una necesidad evidente en la comunidad: la falta de protección frente a las crecientes amenazas digitales. Con el avance acelerado de la tecnología, cada vez más personas y empresas empezaron a manejar información sensible —desde datos personales hasta documentos financieros— sin contar con los recursos adecuados para protegerse. Esto dejó a muchos expuestos a situaciones graves como el robo de identidad, fraudes económicos, pérdida de información y ataques cibernéticos que podían poner en riesgo su estabilidad y confianza.</p>
       <p>Frente a este panorama, un grupo de jóvenes apasionados por la informática y comprometidos con el bienestar de la comunidad decidió unir esfuerzos y conocimientos para crear un proyecto que tuviera un impacto real. Así nació CiberPadlock, con la idea de ofrecer servicios accesibles que no solo se enfocaran en la protección digital, sino también en la prevención y la educación en seguridad tecnológica.</p>
@@ -236,7 +374,7 @@
       <p>Actualmente, muchas empresas y personas manejan información sensible sin contar con medidas adecuadas de protección, lo que las expone a riesgos como robos de datos, virus o ataques cibernéticos. Además, no siempre cuentan con personal capacitado o con el conocimiento suficiente para prevenir o responder a estas amenazas.</p>
       <p>CiberPadlock surge para resolver este problema, ofreciendo soluciones de protección digital, asesoría técnica y capacitación, contribuyendo así a crear un entorno digital más confiable y seguro para todos</p>
       <div class="mascota-container">
-      <img src="Mascota.png" alt="Mascota Paolo" class="mascota-interactiva" onclick="hablarPaolo()">
+      <img src="img/Mascota.png" alt="Mascota Paolo" class="mascota-interactiva" onclick="hablarPaolo()">
       <div id="mensajePaolo" class="mensaje-paolo">¡Haz clic en Paolo!</div>
     </div>
   </section>
@@ -278,7 +416,7 @@ El objetivo de nuestra empresa es proporcionar a cada usuario la confianza y cer
     <ul>
       <li>Monitoreo de redes y sistemas 24/7: supervisión continua para detectar amenazas en tiempo real.</li>
       <li>Respuesta inmediata ante incidentes: atención rápida y efectiva frente a ataques cibernéticos o fallas de seguridad.</li>
-      <li>PAuditorías y diagnósticos de seguridad: revisión completa de sistemas y análisis de vulnerabilidades.</li>
+      <li>Auditorías y diagnósticos de seguridad: revisión completa de sistemas y análisis de vulnerabilidades.</li>
       <li>Implementación de firewalls y sistemas de detección de intrusos (IDS/IPS): protección activa contra accesos no autorizados y malware</li>
     </ul>
     <h3>Costos</h3>
@@ -327,11 +465,214 @@ desde $600.000 COP/mes para instituciones o empresas pequeñas.</p>
       <li>Compromiso con la comunidad: colaboración con instituciones educativas y organizaciones locales para fortalecer la educación y cultura digital segura.</li>
    </ul>
   </section>
+  <section id="Bitacoras" class="content">
+  <h1>Bitácoras</h1>
+  <div class="submenu-bitacoras">
+    <button onclick="mostrarBitacora('bitacora1')">Bitácora 1</button>
+    <button onclick="mostrarBitacora('bitacora2')">Bitácora 2</button>
+    <button onclick="mostrarBitacora('bitacora3')">Bitácora 3</button>
+  </div>
+
+  <div id="bitacora1" class="bitacora active">
+    <h1>Contrato y bitacora </h1>
+<h1>Carta  de aceptación  del servicio</h1>
+<p>Estimada  María  Isabel por medio  de este presente, confirmamos  su aceptación  al servicio  ofrecido  por la empresa CiberPadlock.
+<p> Agradecemos la importancia de contar con medidas solidas de protección para garantizar la seguridad de su información y sistemas.</p>
+<h2>Proceso del  servicio  aplicado</h2>
+<ul>
+<li>En primera instancia, se realizó un análisis previo del estado del software del co mputador  con el fin de realizar  el procedimiento requerido  en consecuencia  a los fallos encontrados.</li>
+<li>Después de haber analizado los fallos encontrados, se procede a instalar el programa  de antivirus  “Avast  Free Antivirus” con el fin de lograr  un escaneo completo del dispositivo.</li>
+<li>Ejecutamos  el programa y  revisamos  su funcionalidad  en el PC.</li>
+<li>Por último,  se explica  a la cliente  el programa  y se proporciona consejos  para mantener el PC.</li>
+</ul>
+<p>Por lo tanto, expresamos nuestro compromiso de colaboración y confianza para implementar  las soluciones  acordadas.  Esperamos  poder  trabajar  en conjunto  para fortalecer la seguridad de nuestra infraestructura digital.</p>
+<p>Agradecemos  su colaboración  y disposición  para un grandioso  trabajo.</p>
+<h2>Trabajo</h2>
+<p>A continuación, se presenta el proceso de cómo se realizó el servicio a nuestro cliente, los documentos de registro de él mismo y las evidencias fotográficas de cómo se desarrolló el servicio, el entorno en el que se realizó y un video sobre la explicación de paso a paso de cómo se realizó la instalación.</p>
+<p>Datos del Cliente</p>
+<h2>Proceso del Servicio Aplicado</h2>
+<ul>
+<ol>1. En primera instancia, se realizó un análisis previo del estado del software del computador, con el fin de realizar el procedimiento requerido en consecuencia a los fallos encontrados.</ol>
+<ol>2. Después de haber analizado los fallos encontrados, se procede a instalar el programa de antivirus “Avast Free Antivirus”, con el fin de lograr un escaneo comp leto del dispositivo.</ol>
+<ol>3. Ejecutamos el programa y revisamos su funcionalidad en el PC.</ol>
+<ol>4. Por último, se explica al cliente cómo se utiliza el programa y se proporcionan consejos para mantener el PC.</ol>
+</ul>
+<h2>Imagenes del servicio aplicado</h2>
+
+<div class="slideshow" id="slideshow">
+    <img src="img/Foto1.png" class="active" alt="Imagen 1" loading="lazy">
+    <img src="img/Foto2.png" alt="Imagen 2" loading="lazy">
+    <img src="img/Foto3.png" alt="Imagen 3" loading="lazy">
+    <img src="img/Foto4.png" alt="Imagen 4" loading="lazy">
+
+    <div class="controls" id="controls"></div>
+  </div>
+
+<ul>
+<p>Encuesta de satisfacción</p>
+<p>1. ¿Cómo calificarías el proceso de implementación del antivirus?</p>
+<li>☑ Excelente</li>
+<li>○ Bueno</li>
+<li>○ Regular</li>
+<li>○ Malo</li>
+<p>2. ¿Qué tan claro fue el soporte técnico brindado durante la instalación?</p>
+<li>○ Muy claro</li>
+<li>☑ Claro</li>
+<li>○ Poco claro</li>
+<li>○ Nada claro</li>
+<p>3. ¿Has notado mejoras en la seguridad de tus dispositivos desde la instalación?</p>
+<li>○ Sí, muchas</li>
+<li>☑ Algunas</li>
+<li>○ Ninguna</li>
+<li>○ Ha empeorado</li>
+<p>4. ¿El antivirus ha generado alertas falsas o interferencias con otros programas?</p>
+<li>○ Nunca</li>
+<li>☑ Rara vez</li>
+<li>○ Frecuentemente</li>
+<li>○ Todo el tiempo</li>
+<p>5. ¿Recomendarías nuestros servicios a otras personas o empresas?</p>
+<li>☑ Definitivamente sí</li>
+<li>○ Probablemente sí</li>
+<li>○ No estoy seguro</li>
+<li>○ Probablemente no</li>
+<p>6. ¿Qué mejorarías del servicio o la atención recibida?  (Respuesta abierta)</p>
+<li>Nada, todo estuvo muy bien.</li>
+<p>7. Comentar ios adicionales:  (Respuesta abierta)</p>
+<li>N.A.</li>
+</ul>
+</div>
+<div id="bitacora2" class="bitacora">
+    <h2>Bitácora 2</h2>
+    <h1>Contrato y Bitacora #2 </h1>
+<h3>1. Hoja de vida del equipo a revisar</h3>
+ <h2>Información del Dispositivo</h2>
+  <table>
+    <tr>
+      <th>Nombre del dispositivo</th>
+      <th>Procesador</th>
+      <th>RAM instalada</th>
+      <th>Id. del dispositivo</th>
+      <th>Id. del producto</th>
+    </tr>
+    <tr>
+      <td>LAPTOP-P276JVJL</td>
+      <td>Intel(R) Core(TM) i5-8250U CPU @ 1.60GHz 1.80GHz</td>
+      <td>8,00 GB (7,87 GB utilizable)</td>
+      <td>33C0267F-B426-4DE0-9A19-10953B68CC9C</td>
+      <td>00327-30821-87216-AAOEM</td>
+    </tr>
+    <tr>
+      <th>Tipo de sistema</th>
+      <th>Lápiz y entrada táctil</th>
+      <th>Estado actual</th>
+      <th>Tipo de equipo</th>
+      <th>Almacenamiento</th>
+    </tr>
+    <tr>
+      <td>Sistema operativo de 64 bits, procesador x64</td>
+      <td>Compatibilidad con entrada manuscrita</td>
+      <td>Usado</td>
+      <td>Portátil</td>
+      <td>932 GB</td>
+    </tr>
+    <tr>
+      <th>Tarjeta gráfica</th>
+      <th>RAM instalada</th>
+      <th>Puertos disponibles</th>
+      <th>Sistema operativo</th>
+      <th>Fechas de mantenimiento</th>
+    </tr>
+    <tr>
+      <td>128 MB</td>
+      <td>8,00 GB</td>
+      <td>USB, HDMI</td>
+      <td>Windows KB5007651 (versión 10.0.27840.1000)</td>
+      <td>07 de Mayo del 2025</td>
+    </tr>
+  </table>
+<h3>2. Datos recolectados del estado del software</h3>
+<p>Identificamos archivos antiguos y pesados  los cuales el Avast Free antivirus nos pide</p>
+<p>eliminarlos. Por otro lado, se reflejó que se estaba retirando de manera errónea la</p>
+<p>USB que utiliza la cliente, por lo que se dio a entender que tanto el PC como la</p>
+<p>unidad de almacenamiento estuvieron en situaciones que las pudieron</p>
+<p>comprometer a conflictos.</p>
+<h3>3. Bitácora #2</h3>
+<ul>
+<li>En primera instancia, se procede a analizar la manera de uso del PC por parte de</li>
+<p>nuestra clienta, de esta forma nos p ermite asegurar que procedimiento hay que</p>
+<p>aplicar en el dispositivo y corregir los errores.</p>
+<li>Después de conversar con María Isabel, ella nos comentó algunos inciertos en el</li>
+<p>uso del dispositivo en el día a día. Ella comenta que a diario utiliza una USB para</p>
+<p>guardar datos sensibles, sin embargo, no realiza el procedimiento adecuado de</p>
+<p>salvaguardar la USB en el momento de extraer esta unidad del equipo; en respuesta</p>
+<p>a esto le damos indicaciones adecuadas de cómo debe retirar la USB y de este</p>
+<p>modo evitar que la  USB corrompa los archivos.</p>
+<li>Procedemos a encender el dispositivo y ver la eficacia con la que enciende el PC,</li>
+<p>esta observación  la realizamos con el fin de asegurar si el antivirus está mejorando</p>
+<p>el rendimiento y velocidad del dispositivo.</p>
+<li>Indagamos dentro de los archivos del PC con el objetivo de localizar archivos</li>
+<p>innecesarios y también  los que sean más propensos a frenar la fluidez  con la que</p>
+<p>trabaja el dispositivo.5.  Eliminamos los archivos de cache y recomendamos a María</p>
+<p>Isabel que este pendiente del e stado de los archivos,  así como el origen de cada</p>
+<p>uno.</p>
+<li>Abrimos el antivirus y lo ejecutamos, por medio de este buscamos nuevas amenazas</li>
+<p>que podrían  estar afectando el computador.</p>
+<li>Después  de finalizar la inspección, procedemos  a realizar la comparación  del estado</li>
+<p>actual del PC con los datos recolectados con respecto al escaneo inicial realizado en</p>
+<p>su equipo.</p>
+<li>Finalizamos con la realización  de una breve sesión  de aprendizaje sobre el manejo</li>
+<p>adecuado de la USB y archivos .</p>
+</ul>
+<h3>5. Encuesta de satisfacción</h3>
+<ul>
+<p>¿Cómo calificarías el proceso de implementación del antivirus?</p>
+<li>Excelente</li>
+<li>Bueno</li>
+<li>Regular</li>
+<li>Malo</li>
+<p>¿Qué tan claro fue el soporte técnico brindado durante la instalación?</p>
+<li>Muy claro</li>
+<li>Claro</li>
+<li>Poco claro</li>
+<li>Nada claro</li>
+<p>¿Has notado mejoras en la seguridad de tus dispositivos desde la instalación?</p>
+<li>Sí, muchas</li>
+<li>Algunas</li>
+<li>Ninguna</li>
+<li>Ha empeorado</li>
+<p>¿El antivirus ha generado alertas falsas o interferencias con otros programas?</p>
+<li>Nunca</li>
+<li>Rara vez</li>
+<li>Frecuentemente</li>
+<li>Todo el tiempo</li>
+<p>¿Recomendarías nuestros servicios a otras personas o empresas?</p>
+<li>Definitivamente sí</li>
+<li>Probablemente sí</li>
+<li>No estoy seguro</li>
+<li>Probablemente no</li>
+<p>¿Qué mejorarías del servicio o la atención recibida?</p>
+<li>(Respuesta abierta)</li>
+<h3>Comentarios adicionales:</h3>
+<li>(Respuesta abierta)</li>
+</ul>
+<h3>6. Comparación inicial y final</h3>
+<p>Al comparar el  dispositivo antes y después de la instalación de antivirus “Avast Free Antivirus , es posible notar diferencias significativas en el rendimiento y en la seguridad del sistema.</p>
+<p>Antes de tener el antivirus, el equipo se encuentra más expuesto a amenazas de virus , no existe una protección en tiempo real ni escaneos programados, por lo que cualquier archivo malicioso puede pasar desapercibido y poner en riesgo la integridad del sistema, además, sin este antivirus, el usuario puede acceder libremente a sitios web sin filtros de seguridad, lo cual incrementa el riesgo de caer en trampas o descargar archivos peligrosos, a unque el sistema puede funcionar más rápido al no dedicar recursos a procesos de protección, esta rapidez viene acompañada de  un mayor peligro .</p>
+<p>Después de instala  rel antivirus “Avast Free Antivirus , la situación cambia considerablemente, e l sistema comienza a beneficiarse de escaneos en tiempo real, análisis programados y actualizaciones constantes de  la base de datos de amenazas, esto permite detectar y neutralizar software malicioso antes de que cause daño.</p>
+<p>El antivirus también suele incluir filtros para bloquear sitios web sospechosos, alertas de seguridad y recomendaciones para mantener el equ ipo protegido; En cuanto al rendimiento, es posible que se note una leve disminución en la velocidad del equipo, sobre todo durante los escaneos completos, ya que el antivirus utiliza parte de la CPU y la memoria RAM para funcionar.</p>
+<p>Sin embargo, este impacto suele ser menor en este dispositivo  por ser una modelo moderno  y se compensa ampliamente con el aumento en la seguridad general del sistema.</p><p>Contenido de la Bitácora 2: descripción del segundo servicio realizado, evidencias y conclusiones...</p>
+  </div>
+
+  <div id="bitacora3" class="bitacora">
+    <h2>Bitácora 3</h2>
+    <p>Contenido de la Bitácora 3: documentación final, encuestas y cierre del proyecto...</p>
+  </div>
+</section>
   <section id="info" class="content">
     <h2>Organigrama Empresarial</h2>
     <p>Aqui tenemos nuestra division en la empresa </p>
-    <img src="Organigrama.PNG" alt="Organigrama"
-    style="width:60%; margin-top:1em; display: block; margin-left: auto; margin-right: auto;"/>
+    <img src="img/Organigrama.png" alt="Organigrama"
+    style="width:80%; margin-top:1em; display: block; margin-left: auto; margin-right: auto;"/>
   </section>
   <section id="sostenibilidad" class="content">
     <h2>Sostenibilidad</h2>
@@ -378,7 +719,10 @@ desde $600.000 COP/mes para instituciones o empresas pequeñas.</p>
   </section>
 
   <footer>
-    <p>Correo: <a href="mailto:CiberPadlock@gmail.com" style="color:#00BFFF;">CiberPadlock@gmail.com</a> | &copy; 2025 CiberPadlock</p>
+     <p>Correo: <a href="mailto:CiberPadlock@gmail.com" style="color:#00BFFF;">CiberPadlock@gmail.com</a> | &copy; 2025 CiberPadlock </p>
+  <p> <a href="https://www.instagram.com/ciberpadlock/?utm_source=qr&igsh=NDdqNHVwa3QydGZj#" target="_blank" style="color:white;">Instagram</a> |
+    <a href="https://www.tiktok.com/@ciberpadlock?_t=ZS-907UXYGhw1v&_r=1" target="_blank" style="color:white;">TikTok</a> |
+    <a href="https://youtube.com/@ciberpadlock?si=kVkF92WiNAisUBif" target="_blank" style="color:white;">YouTube</a>   </p>
   </footer>
 
   <script>
@@ -401,6 +745,38 @@ desde $600.000 COP/mes para instituciones o empresas pequeñas.</p>
       const frase = frasesPaolo[Math.floor(Math.random() * frasesPaolo.length)];
       mensaje.textContent = frase;
     }
+    function mostrarBitacora(id) {
+  document.querySelectorAll('.bitacora').forEach(b => b.classList.remove('active'));
+  document.getElementById(id).classList.add('active');
+}
+const slides = document.querySelectorAll(".slideshow img");
+    const controls = document.getElementById("controls");
+    let index = 0;
+
+    // Crear botones dinámicos
+    slides.forEach((_, i) => {
+      const btn = document.createElement("button");
+      if (i === 0) btn.classList.add("active");
+      btn.addEventListener("click", () => showSlide(i));
+      controls.appendChild(btn);
+    });
+
+    const buttons = controls.querySelectorAll("button");
+
+    function showSlide(i) {
+      slides[index].classList.remove("active");
+      buttons[index].classList.remove("active");
+
+      index = i;
+
+      slides[index].classList.add("active");
+      buttons[index].classList.add("active");
+    }
+    function nextSlide() {
+      let next = index + 1 < slides.length ? index + 1 : 0;
+      showSlide(next);
+    }
+    setInterval(nextSlide, 6500);
   </script>
 </body>
 </html>
